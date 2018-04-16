@@ -120,10 +120,10 @@
                     </executions>
                 </plugin>
 
-                <plugin>
-                    <groupId>org.apache.tomcat.maven</groupId>
-                    <artifactId>tomcat8-maven-plugin</artifactId>
-                    <version>3.0-r1756463</version>
+               <plugin>
+                    <groupId>org.wildfly.plugins</groupId>
+                    <artifactId>wildfly-maven-plugin</artifactId>
+                    <version>1.2.1.Final</version>
                     <configuration>
                         <filename>ROOT.war</filename>
                         <env>
