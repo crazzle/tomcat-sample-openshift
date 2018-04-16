@@ -1,4 +1,4 @@
-package de.codecentric.rgr.haexample;
+package de.codecentric;
 
 
 import org.junit.Test;
@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class HAExampleServletAT {
+public class ExampleTest {
 
     @Test
     public void shortURLTest() {
