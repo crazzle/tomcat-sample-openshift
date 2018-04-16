@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.codecentric.rgr</groupId>
+    <groupId>de.codecentric.tomcat-openshift</groupId>
     <packaging>war</packaging>
     <version>1.0</version>
-    <name>haexample</name>
-    <artifactId>haexample</artifactId>
+    <name>sample</name>
+    <artifactId>sample</artifactId>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,12 +28,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>3.0.6</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -64,7 +58,7 @@
          <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
          <id>openshift</id>
          <build>
-            <finalName>haexample</finalName>
+            <finalName>sample</finalName>
             <plugins>
               <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -127,9 +121,9 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>org.wildfly.plugins</groupId>
-                    <artifactId>wildfly-maven-plugin</artifactId>
-                    <version>1.2.1.Final</version>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat8-maven-plugin</artifactId>
+                    <version>3.0-r1756463</version>
                     <configuration>
                         <filename>ROOT.war</filename>
                         <env>
