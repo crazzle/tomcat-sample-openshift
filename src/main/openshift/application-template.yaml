@@ -7,7 +7,7 @@ message: |-
   in the git repository.
 metadata:
   annotations:
-    openshift.io/display-name: wildfly Cluster Openshift
+    openshift.io/display-name: Wildfly Cluster Openshift
     description: |-
       This example showcases the delegation of the pipeline itself into the git Repository. It will
       create a Jenkins Pipeline that will process the actual code from the git Repository of the application.
@@ -78,9 +78,9 @@ objects:
             - name: JGROUPS_PING_PROTOCOL
               value: openshift.KUBE_PING
             - name: OPENSHIFT_KUBE_PING_NAMESPACE
-              value: wildfly-cluster-openshift
+              value: eap-cluster-openshift
             - name: OPENSHIFT_KUBE_PING_LABELS
-              value: app=wildfly-sampleapp
+              value: app=eap-sampleapp
           readinessProbe:
             failureThreshold: 3
             httpGet:
@@ -109,7 +109,7 @@ objects:
           - name: config
             secret:
               secretName: ${APPLICATION_NAME}-config
-              value: wildfly-cluster-openshift
+              value: eap-cluster-openshift
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         schedulerName: default-scheduler

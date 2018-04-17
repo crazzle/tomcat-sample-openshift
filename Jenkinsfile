@@ -12,7 +12,7 @@ try {
         node('maven') {
 
             def releaseVersion = "1.0.${env.BUILD_NUMBER}"
-            def applicationName = "wildfly-sampleapp"
+            def applicationName = "eap-sampleapp"
 
             stage('Build') {
                 dir('scm') {
@@ -50,7 +50,7 @@ try {
 
             stage('Integration Test - run tests') {
                 dir('scm') {
-                    sh("./mvnw -B org.apache.maven.plugins:maven-failsafe-plugin:integration-test org.apache.maven.plugins:maven-failsafe-plugin:verify -P acceptance-test -DacceptanceTest.hubUrl=http://selenium-standalone-chrome:4444/wd/hub -DacceptanceTest.baseUrl=http://wildfly-sampleapp-stage/haexample")
+                    sh("./mvnw -B org.apache.maven.plugins:maven-failsafe-plugin:integration-test org.apache.maven.plugins:maven-failsafe-plugin:verify -P acceptance-test -DacceptanceTest.hubUrl=http://selenium-standalone-chrome:4444/wd/hub -DacceptanceTest.baseUrl=http://eap-sampleapp-stage/haexample")
                     archiveArtifacts artifacts: 'target/failsafe-reports/*.*', fingerprint: true
                     step([$class: 'JUnitResultArchiver', testResults: 'target/failsafe-reports/*.xml'])
                 }
