@@ -19,7 +19,7 @@ parameters:
   displayName: Name
   name: NAME
   required: true
-  value: tomcoat-microservice-openshift
+  value: tomcat-microservice-openshift
 - description: The URL of the repository with your application source code.
   displayName: Git Repository URL
   name: SOURCE_REPOSITORY_URL
