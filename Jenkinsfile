@@ -12,7 +12,7 @@ try {
         node('maven') {
 
             def releaseVersion = "1.0.${env.BUILD_NUMBER}"
-            def applicationName = "tomcat-sampleapp"
+            def applicationName = "eap-sampleapp"
 
             stage('Build') {
                 dir('scm') {
