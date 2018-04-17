@@ -7,7 +7,7 @@ message: |-
   in the git repository.
 metadata:
   annotations:
-    openshift.io/display-name: Tomcat Microservice Openshift
+    openshift.io/display-name: Wildfly Microservice Openshift
     description: |-
       This example showcases the delegation of the pipeline itself into the git Repository. It will
       create a Jenkins Pipeline that will process the actual code from the git Repository of the application.
@@ -19,12 +19,12 @@ parameters:
   displayName: Name
   name: APPLICATION_NAME
   required: true
-  value: tomcat-microservice-openshift
+  value: wildfly-microservice-openshift
 - description: The name of the application image to use.
   displayName: Image Name
   name: IMAGE_NAME
   required: true
-  value: tomcat-service
+  value: wildfly-service
 - description: The version of the application image to use.
   displayName: Image Version
   name: IMAGE_VERSION
@@ -78,9 +78,9 @@ objects:
             - name: JGROUPS_PING_PROTOCOL
               value: openshift.KUBE_PING
             - name: OPENSHIFT_KUBE_PING_NAMESPACE
-              value: tomcat-microservie-openshift
+              value: wildfly-microservie-openshift
             - name: OPENSHIFT_KUBE_PING_LABELS
-              value: app=tomcat-sampleapp
+              value: app=wildfly-sampleapp
           readinessProbe:
             failureThreshold: 3
             httpGet:
@@ -109,7 +109,7 @@ objects:
           - name: config
             secret:
               secretName: ${APPLICATION_NAME}-config
-              value: tomcat-microservice-openshift
+              value: wildfly-microservice-openshift
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         schedulerName: default-scheduler
