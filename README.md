@@ -1,4 +1,4 @@
-# tomcat-microservice-openshift
+# wildfly-microservice-openshift
 
 A sample app to be deployed on openshift environments
 
