@@ -20,7 +20,7 @@ If you want to use MiniShift please use at least 12 GB of RAM:
 First, login and create a project:
 
         oc login
-        oc new-project tomcat-microservice-openshift --display-name="OpenShift - Tomcat Microservice Reference Implementation"
+        oc new-project wildfly-microservice-openshift --display-name="OpenShift - Wildfly Microservice Reference Implementation"
 
  To setup the pipeline, process the template into cluster. This will create a pipeline which will use the Jenkinsfile from the git repository for further processing:
 
