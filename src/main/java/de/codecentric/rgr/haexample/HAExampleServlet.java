@@ -1,4 +1,4 @@
-package de.codecentric;
+package de.codecentric.rgr.haexample;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
@@ -15,8 +15,8 @@ import java.io.IOException;
  * Running with local docker Selenium
  * docker run -d -p 4444:4444 --name selenium-standalone-chrome selenium/standalone-chrome:latest
  */
-@WebServlet(value="/sample", name="sample-servlet")
-public class ExampleServlet  extends GenericServlet {
+@WebServlet(value="/haexample", name="haexample-servlet")
+public class HAExampleServlet  extends GenericServlet {
 
     private static final String COUNT_VALUE = "countValue";
 

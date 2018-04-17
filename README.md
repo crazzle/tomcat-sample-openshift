@@ -32,4 +32,4 @@ Afterwards, you can start the pipeline from the Web UI.
 
 To make further developments in the build pipeline, you can create your own branch and build the project against it. To build a branch called `feature-1`, create a new build configuration like this.
 
-        oc process -f src/main/openshift/pipeline.yaml -p NAME=devel -p BRANCH=feature-1 | oc apply -f -
+        oc process -f src/main/openshift/pipeline.yaml -p NAME=devel -p BRANCH=feature-1oc | oc apply -f -
