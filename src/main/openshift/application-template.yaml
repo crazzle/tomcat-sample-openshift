@@ -7,7 +7,7 @@ message: |-
   in the git repository.
 metadata:
   annotations:
-    openshift.io/display-name: Wildfly Microservice Openshift
+    openshift.io/display-name: EAP Cluster Openshift
     description: |-
       This example showcases the delegation of the pipeline itself into the git Repository. It will
       create a Jenkins Pipeline that will process the actual code from the git Repository of the application.
@@ -19,12 +19,12 @@ parameters:
   displayName: Name
   name: APPLICATION_NAME
   required: true
-  value: wildfly-microservice-openshift
-- description: The name of the application image to use.
-  displayName: Image Name
+  value: eap-cluster-openshift
+- description: The version of the application image to use.
+  displayName: Image Version
   name: IMAGE_NAME
   required: true
-  value: wildfly-service
+  value: haexample
 - description: The version of the application image to use.
   displayName: Image Version
   name: IMAGE_VERSION
@@ -78,13 +78,13 @@ objects:
             - name: JGROUPS_PING_PROTOCOL
               value: openshift.KUBE_PING
             - name: OPENSHIFT_KUBE_PING_NAMESPACE
-              value: wildfly-microservie-openshift
+              value: eap-cluster-openshift
             - name: OPENSHIFT_KUBE_PING_LABELS
-              value: app=wildfly-sampleapp
+              value: app=eap-sampleapp
           readinessProbe:
             failureThreshold: 3
             httpGet:
-              path: /sample
+              path: /haexample
               port: 8080
               scheme: HTTP
             initialDelaySeconds: 10
@@ -94,7 +94,7 @@ objects:
           livenessProbe:
             failureThreshold: 3
             httpGet:
-              path: /sample
+              path: /haexample
               port: 8080
               scheme: HTTP
             initialDelaySeconds: 120
@@ -109,7 +109,7 @@ objects:
           - name: config
             secret:
               secretName: ${APPLICATION_NAME}-config
-              value: wildfly-microservice-openshift
+              value: eap-cluster-openshift
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         schedulerName: default-scheduler
